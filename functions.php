@@ -50,3 +50,27 @@ function prixRemise(float $prixInitial, float $pourcentage): float
 
 
 echo "Le prix après remise est " . round(prixRemise(95.35, 10)) . PHP_EOL;
+
+function envoyerMessage(string $expediteur, string $destinataire, string $message): void
+{
+    echo "[$expediteur => $destinataire]: $message";
+}
+
+echo envoyerMessage("Zaher", "Toto", "Bonjour Toto") . PHP_EOL;
+
+function fraisLivraison(float $poids): float
+{
+    switch ($poids) {
+        case $poids <= 1:
+            return 5;
+        case $poids <= 5 && $poids > 1:
+            return 10;
+        default:
+            return 20;
+
+    }
+}
+
+echo "Les frais de livraison sont: " . fraisLivraison(2) . PHP_EOL;
+echo "Les frais de livraison sont: " . fraisLivraison(1) . PHP_EOL;
+echo "Les frais de livraison sont: " . fraisLivraison(15) . PHP_EOL;
