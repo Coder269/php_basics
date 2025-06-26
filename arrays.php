@@ -33,7 +33,7 @@ foreach ($beetles as $key => $beetle) {
     echo "$beetle joue le role de $key" . PHP_EOL;
 }
 
-$etudiants = ["Alice", "Bob", "Charlie", "Diane",];
+$etudiants = ["Bob", "Alice", "Diane", "Charlie",];
 
 sort($etudiants);
 
