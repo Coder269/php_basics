@@ -9,7 +9,7 @@ if (empty($_POST)) {
 
 $errors = [];
 
-//Cleaning with trim (deleting spaces) and htmlentities to prevent les failles XSS
+//Cleaning with trim (deleting spaces at the beginning and the end of the value) and htmlentities to prevent les failles XSS
 //$_Post is an associative array and superglobal variable (every value is associated to its name in the form name attribute
 
 $data = array_map('trim', $_POST);
