@@ -1,5 +1,10 @@
 <?php
 
+//Empecher l'accàs direct à la page traitement sans passer par la page contact
+if (empty($_POST)) {
+    header("Location: contact.php"); //rediriger l'utilisateur à la page contact
+    exit();  //terminer l'execution du script
+}
 //Validation et récuperation des données du formulaire
 
 $errors = [];
@@ -50,7 +55,7 @@ if (!isset($dataFinal["cgu"]) || empty($dataFinal["cgu"]))
 <body>
 <?php
 if (empty($errors)) {
-    echo "<p>Merci $name pour votre message : $message</p>";
+    echo "<p>Merci <strong>$name</strong> pour votre message : <em>$message</em></p>";
 } else {
     echo "<h2>Votre demande n'a pas pu etre traitée : </h2>";
     echo "<ul>";
